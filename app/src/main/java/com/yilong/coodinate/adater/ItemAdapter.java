@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
     private Context mContext;
     private ArrayList<String> mDatas;
+    private OnItemLickListener mOnItemClickListener;
 
     public ItemAdapter(Context mContext, ArrayList<String> mDatas) {
         this.mContext = mContext;
@@ -32,8 +33,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i) {
         itemViewHolder.mTvText.setText(mDatas.get(i));
+        itemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mOnItemClickListener!=null) {
+                    mOnItemClickListener.onItemClick(itemViewHolder.itemView,i);
+                }
+            }
+        });
     }
 
     @Override
@@ -55,4 +64,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         }
     }
 
+    public void setmOnItemClickListener(OnItemLickListener mOnItemClickListener) {
+        this.mOnItemClickListener = mOnItemClickListener;
+    }
+
+    public interface OnItemLickListener{
+        void onItemClick(View v,int position);
+        void onItemLongClick(View v,int position);
+    }
 }

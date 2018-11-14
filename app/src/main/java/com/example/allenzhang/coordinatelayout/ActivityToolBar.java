@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.recyclerview.extensions.ListAdapter;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -54,7 +55,7 @@ public class ActivityToolBar extends Activity {
             for(int i=0;i<60;i++) {
                 mDatas.add("item:"+i);
             }
-            ItemAdapter itemAdapter = new ItemAdapter(mContext,mDatas);
+            final ItemAdapter itemAdapter = new ItemAdapter(mContext,mDatas);
 
 
             mRecycleListview.setAdapter(itemAdapter);
@@ -62,9 +63,22 @@ public class ActivityToolBar extends Activity {
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
             Log.d("chao","LinearLayoutManager:"+linearLayoutManager.canScrollHorizontally()+":"+linearLayoutManager.canScrollVertically());
             linearLayoutManager.scrollToPosition(5);
-            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             mRecycleListview.setLayoutManager(linearLayoutManager);
-            mRecycleListview.addItemDecoration(new DividerDecorateion(mContext,LinearLayoutManager.HORIZONTAL));
+            mRecycleListview.addItemDecoration(new DividerDecorateion(mContext,LinearLayoutManager.VERTICAL));
+            mRecycleListview.setItemAnimator(new DefaultItemAnimator());
+
+            mRecycleListview.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+//                    itemAdapter.notifyItemInserted(5);
+                    itemAdapter.notifyItemRemoved(6);
+//                    itemAdapter.notifyItemChanged(7);
+                }
+            },2000);
+
+
+
 
 //            GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext,3);
 //            mRecycleListview.setLayoutManager(gridLayoutManager);
