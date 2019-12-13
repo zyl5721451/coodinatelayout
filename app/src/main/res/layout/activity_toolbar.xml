@@ -4,23 +4,35 @@
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.support.v7.widget.Toolbar
+
+        <ImageView
+            android:id="@+id/iv_image"
             android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/upda_bg"
+            android:visibility="visible"
+            app:layout_scrollFlags="scroll|snap" />
+
+        <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:layout_height="50dp">
-        </android.support.v7.widget.Toolbar>
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingBottom="50dp"
+            android:visibility="gone" />
 
     </android.support.design.widget.AppBarLayout>
+
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
         android:id="@+id/recycle_listview"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </android.support.v7.widget.RecyclerView>
 

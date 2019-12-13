@@ -6,13 +6,15 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="wrap_content">
+
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:contentScrim="@color/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            android:layout_height="300dp"
+            app:contentScrim="@color/colorAccent"
+            app:layout_scrollFlags="scroll"
+            app:title="我是标题">
 
             <ImageView
                 android:id="@+id/iv_image"
@@ -22,30 +24,21 @@
                 android:src="@mipmap/upda_bg"
                 app:layout_collapseMode="parallax" />
 
-            <android.support.v7.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorAccent"
-                app:layout_collapseMode="pin">
 
-
-            </android.support.v7.widget.Toolbar>
 
 
         </android.support.design.widget.CollapsingToolbarLayout>
-
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabIndicatorColor="@color/colorAccent"
-            app:tabIndicatorHeight="4dp"
-            app:tabSelectedTextColor="@color/colorPrimaryDark"
-            app:tabTextColor="#000000">
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            app:layout_collapseMode="pin"
+            android:background="@color/colorAccent"
+            android:visibility="visible" />
 
-        </android.support.design.widget.TabLayout>
+
     </android.support.design.widget.AppBarLayout>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle_listview"
@@ -54,5 +47,15 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      />
+
 
 </android.support.design.widget.CoordinatorLayout>

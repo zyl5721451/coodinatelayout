@@ -22,6 +22,8 @@
         <activity android:name=".ActivityToolBar"/>
         <activity android:name=".ActivityViewPager"/>
         <activity android:name=".Activity_CollapsingToolbar"/>
+        <activity android:name=".ActivityCustomBehavior"/>
+        <activity android:name=".ActivityDepenceBehavior"/>
     </application>
 
 </manifest>

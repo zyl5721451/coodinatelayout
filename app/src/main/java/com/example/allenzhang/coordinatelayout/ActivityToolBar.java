@@ -77,6 +77,15 @@ public class ActivityToolBar extends Activity {
                 }
             },2000);
 
+            mAppbarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+                @Override
+                public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
+
+                }
+            });
+
+            mAppbarLayout.setExpanded(true);
+
 
 
 

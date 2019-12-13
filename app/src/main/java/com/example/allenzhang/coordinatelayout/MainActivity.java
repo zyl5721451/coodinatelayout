@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         public Button mButton9;
         public Button mButton10;
         public FloatingActionButton mFab;
+        public Button mButton11;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
@@ -83,10 +84,14 @@ public class MainActivity extends AppCompatActivity {
             this.mButton9 = (Button) rootView.findViewById(R.id.button9);
             this.mButton10 = (Button) rootView.findViewById(R.id.button10);
             this.mFab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+            this.mButton11 = (Button) rootView.findViewById(R.id.button11);
 
             mButton.setOnClickListener(this);
             mButton2.setOnClickListener(this);
             mButton3.setOnClickListener(this);
+            mButton4.setOnClickListener(this);
+            this.mButton11.setOnClickListener(this);
+            this.mButton10.setOnClickListener(this);
         }
 
         @Override
@@ -103,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.button3:
                     Toast.makeText(rootView.getContext(),"button3",Toast.LENGTH_SHORT).show();
                     rootView.getContext().startActivity(new Intent(rootView.getContext(),Activity_CollapsingToolbar.class));
+                    break;
+                case R.id.button11:
+                    rootView.getContext().startActivity(new Intent(rootView.getContext(),ActivityCustomBehavior.class));
+                    break;
+                case R.id.button4:
+                    rootView.getContext().startActivity(new Intent(rootView.getContext(),ActivityDepenceBehavior.class));
+                    break;
+                case R.id.button10:
+                    rootView.getContext().startActivity(new Intent(rootView.getContext(),ActivityDepenceBehavior.class));
                     break;
             }
         }

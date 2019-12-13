@@ -42,7 +42,7 @@
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="depenceBehavior"
             tools:layout_editor_absoluteX="146dp"
             tools:layout_editor_absoluteY="322dp" />
 
@@ -97,7 +97,14 @@
             android:id="@+id/button10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="customeScorllInterface"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="387dp" />
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义Beheavior"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="387dp" />
     </LinearLayout>
