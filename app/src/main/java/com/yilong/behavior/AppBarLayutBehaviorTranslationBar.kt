@@ -32,6 +32,9 @@ class AppBarLayutBehaviorTranslationBar : AppBarLayout.Behavior {
 
     override fun onStartNestedScroll(parent: CoordinatorLayout, child: AppBarLayout, directTargetChild: View, target: View, nestedScrollAxes: Int, type: Int): Boolean {
 //        return super.onStartNestedScroll(parent, child, directTargetChild, target, nestedScrollAxes, type)
+        var textHeight = child.findViewById<TextView>(R.id.title).measuredHeight
+//        topAndBottomOffset = textHeight
+        Log.d("chao","onStartNestedScroll:"+":"+child.top+":"+textHeight)
         return nestedScrollAxes and ViewCompat.SCROLL_AXIS_VERTICAL != 0
     }
 
@@ -58,11 +61,11 @@ class AppBarLayutBehaviorTranslationBar : AppBarLayout.Behavior {
      * consum是appbarlayout的消费量，向下滑动时，一直是0，向上滑动时，appbarlayout的变动为正，consume一直是正。
      */
     override fun onNestedPreScroll(coordinatorLayout: CoordinatorLayout, child: AppBarLayout, target: View, dx: Int, dy: Int, consumed: IntArray, type: Int) {
-        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type)
         var textHeight = child.findViewById<TextView>(R.id.title).measuredHeight
+        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type)
         var navigationHeight = 275
         translationY = translationY-dy
-        Log.d("chao","onNestedPreScroll:"+target.top+":"+translationY+":"+(navigationHeight)+":"+consumed[1])
+        Log.d("chao","onNestedPreScroll:"+":"+child.top+":"+(navigationHeight)+":"+consumed[1])
         if(translationY>textHeight){
             translationY = textHeight
         }else if(translationY<0){
@@ -71,6 +74,7 @@ class AppBarLayutBehaviorTranslationBar : AppBarLayout.Behavior {
         if(target.top>navigationHeight){
             translationY = 0
         }
+//        child.top = child.top+translationY
 //        child.layoutParams as
 //        child.translationY = translationY.toFloat()
 //        consumed[1] = translationY+consumed[1]
