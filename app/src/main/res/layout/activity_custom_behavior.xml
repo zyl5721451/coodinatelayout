@@ -9,6 +9,35 @@
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/bg2"
+                android:minHeight="50dp"
+                app:layout_scrollFlags="scroll"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="Hello World"
+                android:textColor="#ffffff"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:textSize="18sp" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/my_list"
@@ -16,62 +45,19 @@
             android:layout_height="match_parent"
             app:elevation="0dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/app_bar"
-            android:layout_width="match_parent"
-            app:layout_behavior="com.yilong.behavior.AppBarLayutBehaviorTranslationBar"
-            android:layout_height="wrap_content">
-
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-                android:minHeight="150dp"
-                android:layout_height="350dp">
-                <ImageView
-                    android:id="@+id/iv_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@mipmap/bg2"
-                    android:minHeight="50dp"
-                    android:scaleType="fitXY"
-                   />
-
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:background="#ff0000"
-                    android:gravity="center"
-                    android:layout_gravity="bottom"
-                    android:text="Hello World"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-            </android.support.design.widget.CollapsingToolbarLayout>
-
-
-        </android.support.design.widget.AppBarLayout>
-
-
         <TextView
             android:id="@+id/title_mask"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ff0000"
+            android:layout_marginTop="100dp"
+            android:background="@color/colorAccent"
             android:gravity="center"
-            android:visibility="gone"
             android:text="Hello World"
             android:textColor="#ffffff"
-            android:textSize="18sp" />
-
-
-
-
+            android:textSize="18sp"
+            app:layout_behavior="com.yilong.behavior.MaskRecommendBehavior"/>
 
     </android.support.design.widget.CoordinatorLayout>
-
-
 
 
     <ImageView
@@ -79,7 +65,5 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/colorPrimaryDark" />
-
-
 </FrameLayout>
 
