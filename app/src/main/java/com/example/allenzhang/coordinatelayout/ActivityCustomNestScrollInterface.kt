@@ -13,12 +13,12 @@ class ActivityCustomNestScrollInterface : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_depence_behavior)
-        appbar_layout.addOnOffsetChangedListener(object :AppBarLayout.OnOffsetChangedListener{
-            override fun onOffsetChanged(p0: AppBarLayout?, p1: Int) {
-                Log.d("chao","onOffsetChanged:"+p1)
-            }
-
-        })
+//        appbar_layout.addOnOffsetChangedListener(object :AppBarLayout.OnOffsetChangedListener{
+//            override fun onOffsetChanged(p0: AppBarLayout?, p1: Int) {
+//                Log.d("chao","onOffsetChanged:"+p1)
+//            }
+//
+//        })
         Log.d("chao","onOffsetChanged3:")
 
     }
