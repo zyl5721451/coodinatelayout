@@ -28,12 +28,12 @@ class ActivityDepenceBehavior : FragmentActivity() {
         }
         var itemAdapter = ItemAdapter(this,datas)
         recycleview.adapter = itemAdapter
-        appbar_layout.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener{
-            override fun onOffsetChanged(p0: AppBarLayout?, p1: Int) {
-                Log.d("chao","onOffsetChanged:"+p1)
-            }
-
-        })
+//        appbar_layout.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener{
+//            override fun onOffsetChanged(p0: AppBarLayout?, p1: Int) {
+//                Log.d("chao","onOffsetChanged:"+p1)
+//            }
+//
+//        })
         Log.d("chao","onOffsetChanged3:")
     }
 }
