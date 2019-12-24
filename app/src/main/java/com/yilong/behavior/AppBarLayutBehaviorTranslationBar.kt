@@ -18,6 +18,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.MotionEvent
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
+import android.support.v4.math.MathUtils
 
 
 /**
@@ -31,11 +32,11 @@ class AppBarLayutBehaviorTranslationBar : AppBarLayout.Behavior {
 
     override fun onStartNestedScroll(parent: CoordinatorLayout, child: AppBarLayout, directTargetChild: View, target: View, nestedScrollAxes: Int, type: Int): Boolean {
 //        return super.onStartNestedScroll(parent, child, directTargetChild, target, nestedScrollAxes, type)
-        return nestedScrollAxes and ViewCompat.SCROLL_AXIS_VERTICAL !=0
+        return nestedScrollAxes and ViewCompat.SCROLL_AXIS_VERTICAL != 0
     }
 
     override fun onLayoutChild(parent: CoordinatorLayout, abl: AppBarLayout, layoutDirection: Int): Boolean {
-        var layout =  super.onLayoutChild(parent, abl, layoutDirection)
+        var layout = super.onLayoutChild(parent, abl, layoutDirection)
 
         return layout
     }
@@ -50,7 +51,7 @@ class AppBarLayutBehaviorTranslationBar : AppBarLayout.Behavior {
      */
     override fun onNestedScroll(coordinatorLayout: CoordinatorLayout, child: AppBarLayout, target: View, dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int, type: Int) {
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type)
-        Log.d("chao","onNestedScroll:"+dyConsumed+":"+dyUnconsumed)
+        Log.d("chao", "onNestedScroll:" + dyConsumed + ":" + dyUnconsumed)
     }
 
     /**
@@ -70,11 +71,54 @@ class AppBarLayutBehaviorTranslationBar : AppBarLayout.Behavior {
         if(target.top>navigationHeight){
             translationY = 0
         }
+//        child.layoutParams as
 //        child.translationY = translationY.toFloat()
 //        consumed[1] = translationY+consumed[1]
 //        child.scrollTo(0,translationY)
 //       ViewCompat.offsetTopAndBottom(child,translationY)
+//
+//        original(dy, child, consumed, coordinatorLayout, type, target)
+
 
     }
+
+    private fun original(dy: Int, child: AppBarLayout, consumed: IntArray, coordinatorLayout: CoordinatorLayout, type: Int, target: View) {
+//        if (dy != 0) {
+//            val min: Int
+//            val max: Int
+//            if (dy < 0) {
+//                min = -child.totalScrollRange
+//                max = min + ViewCompat.getMinimumHeight(child)
+//            } else {
+//                min = -child.totalScrollRange
+//                max = 0
+//            }
+//            if (min != max) {
+//                consumed[1] = setHeaderTopBottomOffset(coordinatorLayout, child, topAndBottomOffset - dy, min, max)
+//
+//                if (type == 1) {
+//                    val curOffset = topAndBottomOffset
+//                    if (dy < 0 && curOffset == 0 || dy > 0 && curOffset == -child.getDownNestedScrollRange()) {
+//                        ViewCompat.stopNestedScroll(target, 1)
+//                    }
+//                }
+//            }
+//        }
+    }
+
+//    fun setHeaderTopBottomOffset(coordinatorLayout: CoordinatorLayout?, appBarLayout: AppBarLayout?, newOffset: Int, minOffset: Int, maxOffset: Int): Int {
+//        var newOffset = newOffset
+//        val curOffset = this.topAndBottomOffset
+//        var consumed = 0
+//        if (minOffset != 0 && curOffset >= minOffset && curOffset <= maxOffset) {
+//            newOffset = MathUtils.clamp(newOffset, minOffset, maxOffset)
+//            if (curOffset != newOffset) {
+//                topAndBottomOffset = newOffset
+//                consumed = curOffset - newOffset
+//            }
+//        }
+//        return consumed
+//    }
+
 
 }
