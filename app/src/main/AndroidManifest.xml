@@ -24,6 +24,7 @@
         <activity android:name=".Activity_CollapsingToolbar"/>
         <activity android:name=".ActivityCustomBehavior"/>
         <activity android:name=".ActivityDepenceBehavior"/>
+        <activity android:name=".ActivityCustomAppbarLayoutBehavior"/>
     </application>
 
 </manifest>

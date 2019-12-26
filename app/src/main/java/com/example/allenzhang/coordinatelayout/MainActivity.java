@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             mButton4.setOnClickListener(this);
             this.mButton11.setOnClickListener(this);
             this.mButton10.setOnClickListener(this);
+            this.mButton9.setOnClickListener(this);
         }
 
         @Override
@@ -118,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.button10:
                     rootView.getContext().startActivity(new Intent(rootView.getContext(),ActivityDepenceBehavior.class));
                     break;
+                case R.id.button9:
+                    rootView.getContext().startActivity(new Intent(rootView.getContext(),ActivityCustomAppbarLayoutBehavior.class));
+                    break;
+
             }
         }
     }
