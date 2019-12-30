@@ -42,6 +42,7 @@
                 android:gravity="center"
                 android:text="Hello World"
                 android:textColor="#ffffff"
+                android:visibility="gone"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:textSize="18sp" />
 
