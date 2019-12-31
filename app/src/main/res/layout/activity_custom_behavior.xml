@@ -25,7 +25,7 @@
                 android:layout_height="200dp"
                 android:background="@mipmap/bg2"
                 android:minHeight="50dp"
-                app:layout_scrollFlags="scroll"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:scaleType="fitXY" />
 
             <TextView
@@ -57,6 +57,7 @@
             android:background="@color/colorAccent"
             android:gravity="center"
             android:text="Hello World"
+            android:visibility="gone"
             android:textColor="#ffffff"
             android:textSize="18sp"
             app:layout_behavior="com.yilong.behavior.MaskRecommendBehavior"/>
